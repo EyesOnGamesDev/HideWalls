@@ -13,10 +13,7 @@ Script can either Hide Wall completely by disactivating mesh render and leave a 
 or
 Change material of each wall. Assigned material has opacity alpha channel set to zero.
 
-Solution #1
-![image](https://user-images.githubusercontent.com/71728654/171873471-5274179b-6d05-478a-9608-8244fa5840d1.png)
-Solution #2
-![image](https://user-images.githubusercontent.com/71728654/171873541-e39dce3c-2990-4362-adec-14fbb853dd9a.png)
+![image](https://user-images.githubusercontent.com/71728654/171875824-ca217e1c-3593-41dd-b424-97acfb11caba.png)
 
 On project you will find two scenes. 
 First scene called "WallsHide". 
