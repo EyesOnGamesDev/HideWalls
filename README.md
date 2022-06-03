@@ -11,7 +11,7 @@ If walls are under player on Z axis, meaning that propably will block view, it h
 
 Script can either Hide Wall completely by disactivating mesh render and leave a second lower wall visible (Activate Second Wall - Variable)
 or
-Change material of each wall. Assigned material has opacity alpha channel set to zero.
+Change material of each wall (Change Shader Method - Variable). Assigned material has opacity alpha channel set to zero.
 
 ![image](https://user-images.githubusercontent.com/71728654/171875824-ca217e1c-3593-41dd-b424-97acfb11caba.png)
 
