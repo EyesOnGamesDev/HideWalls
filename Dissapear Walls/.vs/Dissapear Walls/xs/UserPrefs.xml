@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/WallDetectionWithCast.cs">
+    <Files>
+      <File FileName="Assets/WallDetection.cs" Line="46" Column="5" />
+      <File FileName="Assets/MoceScript.cs" Line="10" Column="24" />
+      <File FileName="Assets/WallDetectionWithCast.cs" Line="76" Column="46" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a0f87f92-8c88-4d7f-98b4-c679279d4803" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
