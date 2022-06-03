@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class WallDetectionWithCast : MonoBehaviour
+public class SubWallDetectionWithCast : MonoBehaviour
 {
     /// <summary>
     /// Script is based on wall prefabs.
@@ -49,7 +49,7 @@ public class WallDetectionWithCast : MonoBehaviour
     //Private Variables
 
     //Save wall parent used later for checks if current wall is the shame as previous one
-    public Transform detectedWall;
+    public Transform detectedWallParent;
 
     //Gather all parent walls to be hiden at each case
     public List<Transform> hidenWalls;
@@ -84,18 +84,18 @@ public class WallDetectionWithCast : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fromPosition, direction, out hit, distance,_mask_Layers))
         {
-            if(hit.transform != detectedWall)
+            if(hit.transform.parent != detectedWallParent)
             {
 
                 //StartCoroutine(ReAppearWalls(detectedWallParent));
-                detectedWall = hit.transform;
+                detectedWallParent = hit.transform.parent;
 
                 if (activateSecondWall)
                 {
                     HideWalls();
-                }else
+                }
+                else
                 {
-                    Debug.Log("Lower Opacity");
                     HideWalls_LowerOpacity();
                 }
             }
@@ -103,25 +103,23 @@ public class WallDetectionWithCast : MonoBehaviour
         }
         else
         {
-            if(detectedWall!=null)
+            if(detectedWallParent!=null)
             {
                 if (activateSecondWall)
                 {
-                    ShoWalls(detectedWall);
+                    ShoWalls(detectedWallParent);
                     //StartCoroutine(ReAppearWalls(detectedWallParent));
                 }
                 else
                 {
-                    Debug.Log("Highter Opacity");
-                    ShoWalls_LowerOpacity(detectedWall);
+                    ShoWalls_LowerOpacity(detectedWallParent);
                 }
-                detectedWall = null;
+                detectedWallParent = null;
                 Debug.DrawLine(fromPosition, toPosition, Color.green);
             }
 
         }
     }
-
 
 
     //Detect walls close to player and check if walls are abore or bellow player.
@@ -137,22 +135,24 @@ public class WallDetectionWithCast : MonoBehaviour
             bool hideWallsCheck = true;
 
             //If we havent checked parent check it
-            if(!CheckedParent.Contains(hitCollider.transform))
+            if(!CheckedParent.Contains(hitCollider.transform.parent))
             {
-                if (hitCollider.transform.position.z > _trans_Player.position.z)
+                foreach (Transform child in hitCollider.transform.parent)
                 {
-                    hideWallsCheck = false;
-                    break;
+                    if (child.position.z > _trans_Player.position.z)
+                    {
+                        hideWallsCheck = false;
+                        break;
+                    }
                 }
-
                 //Add to list in order not to check again
                 CheckedParent.Add(hitCollider.transform);
             }
-
+             
             //Add walls to list in order to use it latter
-            if (hideWallsCheck)
+            if(hideWallsCheck)
             {
-                var parent = hitCollider.transform;
+                var parent = hitCollider.transform.parent;
                 if (!hidenWalls.Contains(parent))
                 {
                     hidenWalls.Add(parent);
@@ -164,33 +164,38 @@ public class WallDetectionWithCast : MonoBehaviour
 
     }
 
-
     //Hide Unhide Methods for walls
     private void HideWalls()
     {
-        if(detectedWall!=null)
+        if(detectedWallParent!=null)
         {
             DetecteWalls_SphereCast(_trans_Player.position, radius);
             foreach(Transform obj in hidenWalls)
             {
-                obj.GetComponent<MeshRenderer>().enabled = false;
+                foreach (Transform child in obj)
+                {
+                    child.GetComponent<MeshRenderer>().enabled = false;
+                }
             }   
         }
     }
 
     private void HideWalls_LowerOpacity()
     {
-       
-        if (detectedWall != null)
+
+        if (detectedWallParent != null)
         {
             DetecteWalls_SphereCast(_trans_Player.position, radius);
-            if(LowerOpacityMat!=null)
+            if (LowerOpacityMat != null)
             {
                 foreach (Transform obj in hidenWalls)
                 {
-                    var rend = obj.gameObject.GetComponent<MeshRenderer>();
+                    foreach (Transform child in obj)
+                    {
+                        var rend = child.gameObject.GetComponent<MeshRenderer>();
 
-                    rend.material = LowerOpacityMat;
+                        rend.material = LowerOpacityMat;
+                    }                  
 
                 }
             }
@@ -198,10 +203,9 @@ public class WallDetectionWithCast : MonoBehaviour
             {
                 Debug.Log("Set Material");
             }
-            
+
         }
     }
-
 
     private void ShoWalls(Transform wall)
     {
@@ -209,7 +213,10 @@ public class WallDetectionWithCast : MonoBehaviour
 
         foreach (Transform obj in hidenWalls)
         {
-            obj.GetComponent<MeshRenderer>().enabled = true;
+            foreach (Transform child in obj)
+            {
+                child.GetComponent<MeshRenderer>().enabled = true;
+            }
         }
         hidenWalls.Clear();
     }
@@ -218,24 +225,25 @@ public class WallDetectionWithCast : MonoBehaviour
     {
         DetecteWalls_SphereCast(_trans_Player.position, radius);
 
-        if(originalMat!=null)
+        if (originalMat != null)
         {
             foreach (Transform obj in hidenWalls)
             {
-                var rend = obj.gameObject.GetComponent<MeshRenderer>();
+                foreach (Transform child in obj)
+                {
+                    var rend = child.gameObject.GetComponent<MeshRenderer>();
+                    rend.material = originalMat;
+                }
 
-                rend.material = originalMat;
             }
         }
         else
         {
             Debug.Log("Set Material");
         }
-        
+
         hidenWalls.Clear();
     }
-
-
 
     //Debuging Draws
     void OnDrawGizmosSelected()
@@ -245,9 +253,10 @@ public class WallDetectionWithCast : MonoBehaviour
         Gizmos.DrawWireSphere(_trans_Player.position, radius);
     }
 
+
     //Used to make two materials appear on inspector
 #if UNITY_EDITOR
-    [CustomEditor(typeof(WallDetectionWithCast))]
+    [CustomEditor(typeof(SubWallDetectionWithCast))]
     public class RandomScript_Editor : Editor
     {
         public override void OnInspectorGUI()
@@ -255,7 +264,7 @@ public class WallDetectionWithCast : MonoBehaviour
 
             DrawDefaultInspector(); // for other non-HideInInspector fields
 
-            WallDetectionWithCast script = (WallDetectionWithCast)target;
+            SubWallDetectionWithCast script = (SubWallDetectionWithCast)target;
 
 
             // draw checkbox for the bool

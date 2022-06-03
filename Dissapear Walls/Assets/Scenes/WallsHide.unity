@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -178,6 +178,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls
@@ -239,6 +243,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls
@@ -406,6 +414,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls (14)
@@ -540,6 +552,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls (8)
@@ -732,18 +748,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 711424827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcdda51d17717440bb462c8f8864645a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f5777630c515a84799e58e843e4f138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   activateSecondWall: 1
   changeShaderMethod: 0
-  originalMat: {fileID: 0}
-  changeMat: {fileID: 0}
+  originalMat: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
+  LowerOpacityMat: {fileID: 2100000, guid: 68e73ec1ea3416f488f4b89cec92c273, type: 2}
   radius: 4
   _trans_Player: {fileID: 2099848095}
   _mask_Layers:
     serializedVersion: 2
     m_Bits: 128
+  detectedWall: {fileID: 0}
+  hidenWalls: []
 --- !u!1001 &962986758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -751,6 +769,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls (7)
@@ -935,6 +957,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls
@@ -1001,6 +1027,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls (7)
@@ -1067,6 +1097,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls (13)
@@ -1208,6 +1242,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls (12)
@@ -1274,6 +1312,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls (12)
@@ -1340,6 +1382,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls (8)
@@ -1406,6 +1452,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls (14)
@@ -1472,6 +1522,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls (13)
@@ -1537,6 +1591,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls (12)
@@ -1603,6 +1661,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls
@@ -1669,6 +1731,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls (10)
@@ -1735,6 +1801,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls (9)
@@ -1801,6 +1871,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 122630938}
     m_Modifications:
+    - target: {fileID: 4562135031495998665, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 645b28ab7a920428990c729d81cc5032, type: 2}
     - target: {fileID: 4562135031495998668, guid: 18e20e7a2f5ac4a0f8ff4d9ceaa55ab3, type: 3}
       propertyPath: m_Name
       value: Walls (7)
