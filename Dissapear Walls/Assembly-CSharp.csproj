@@ -56,8 +56,9 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\WallDetection.cs" />
-    <Compile Include="Assets\Script\MoceScript.cs" />
+    <Compile Include="Assets\Script\Supported\WallDetection.cs" />
+    <Compile Include="Assets\Script\Supported\MoceScript.cs" />
+    <Compile Include="Assets\Script\SubWallDetectionWithCast.cs" />
     <Compile Include="Assets\Script\WallDetectionWithCast.cs" />
   </ItemGroup>
   <ItemGroup>

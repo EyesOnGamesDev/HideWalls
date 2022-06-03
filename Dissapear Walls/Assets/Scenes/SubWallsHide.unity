@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2501,8 +2501,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcdda51d17717440bb462c8f8864645a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activateSecondWall: 1
-  changeShaderMethod: 0
+  activateSecondWall: 0
+  changeShaderMethod: 1
   originalMat: {fileID: 0}
   changeMat: {fileID: 0}
   radius: 4
@@ -2510,6 +2510,8 @@ MonoBehaviour:
   _mask_Layers:
     serializedVersion: 2
     m_Bits: 128
+  detectedWallParent: {fileID: 0}
+  hidenWalls: []
 --- !u!1001 &747613593
 PrefabInstance:
   m_ObjectHideFlags: 0
